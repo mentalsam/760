@@ -1,0 +1,117 @@
+        <div class="inventory-section" style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 10px; width: 100%; overflow-y: auto;">
+
+            <input type="text" id="searchInput" placeholder="検索..." style="padding: 10px; font-size: 1.2em; width: 80%; max-width: 800px; border: 1px solid #ccc; border-radius: 5px;" />
+
+            <div class="inventory-item" style="display: flex; flex-direction: column; align-items: center; background-color: #f2f2f2; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 800px;">
+                <img src="images/acrylic_ice_heart.jpg" alt="アクリルアイス ハート シェル アクリルストーン" style="width: 150px; height: auto; margin-bottom: 10px;" />
+                <label for="inputData2" style="font-size: 1.5em; margin-bottom: 10px;">アクリルアイス ハート シェル アクリルストーン:</label>
+                <input type="number" id="inputData2" placeholder="何キログラムですか？" style="padding: 15px; font-size: 1.2em; width: 100%; border: 1px solid #ccc; border-radius: 5px;" />
+                <button onclick="calculate2()" style="padding: 15px 25px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.2em;">計算</button>
+                <p id="output2" style="font-size: 1.5em; margin-top: 10px; color: #333;"></p>
+            </div>
+        
+            <div class="inventory-item" style="display: flex; flex-direction: column; align-items: center; background-color: #f2f2f2; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 800px;">
+                <img src="images/marukawa_gum.jpg" alt="５種類のフーセンガムアソートパック" style="width: 150px; height: auto; margin-bottom: 10px;" />
+                <label for="inputData3" style="font-size: 1.5em; margin-bottom: 10px;">５種類のフーセンガムアソートパック:</label>
+                <input type="number" id="inputData3" placeholder="何キログラムですか？" style="padding: 15px; font-size: 1.2em; width: 100%; border: 1px solid #ccc; border-radius: 5px;" />
+                <button onclick="calculate3()" style="padding: 15px 25px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.2em;">計算</button>
+                <p id="output3" style="font-size: 1.5em; margin-top: 10px; color: #333;"></p>
+            </div>
+
+            <div class="inventory-item" style="display: flex; flex-direction: column; align-items: center; background-color: #f2f2f2; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 800px;">
+                <img src="images/tyrol.jpg" alt="チロル" style="width: 150px; height: auto; margin-bottom: 10px;" />
+                <label for="inputData4" style="font-size: 1.5em; margin-bottom: 10px;">チロル(35個入り420g):</label>
+                <input type="number" id="inputData4" placeholder="何キログラムですか？" style="padding: 15px; font-size: 1.2em; width: 100%; border: 1px solid #ccc; border-radius: 5px;" />
+                <button onclick="calculate4()" style="padding: 15px 25px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.2em;">計算</button>
+                <p id="output4" style="font-size: 1.5em; margin-top: 10px; color: #333;"></p>
+            </div>
+
+            <div class="inventory-item" style="display: flex; flex-direction: column; align-items: center; background-color: #f2f2f2; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 800px;">
+                <img src="images/tyro2.jpg" alt="チロルに入ってるチョコ" style="width: 150px; height: auto; margin-bottom: 10px;" />
+                <label for="inputData5" style="font-size: 1.5em; margin-bottom: 10px;">チロルに入ってるチョコ:</label>
+                <input type="number" id="inputData5" placeholder="何キログラムですか？" style="padding: 15px; font-size: 1.2em; width: 100%; border: 1px solid #ccc; border-radius: 5px;" />
+                <button onclick="calculate5()" style="padding: 15px 25px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.2em;">計算</button>
+                <p id="output4" style="font-size: 1.5em; margin-top: 10px; color: #333;"></p>
+            </div>
+
+        </div>
+
+        <script>
+            // 入力データをローカルストレージに保存する関数
+            function saveData() {
+                localStorage.setItem('inputData2', document.getElementById("inputData2").value);
+                localStorage.setItem('inputData3', document.getElementById("inputData3").value);
+                localStorage.setItem('inputData4', document.getElementById("inputData4").value);
+                localStorage.setItem('searchInput', document.getElementById("searchInput").value);
+            }
+
+            function calculate2() {
+                var input = document.getElementById("inputData2").value;
+                var output = Math.round(input * 510);
+                document.getElementById("output2").innerText = "" + output + "個数";
+                saveData();
+            }
+            
+            function calculate3() {
+                var input = document.getElementById("inputData3").value;
+                var output = Math.round(input / 0.00672);
+                document.getElementById("output3").innerText = "" + output + "個数";
+                saveData();
+            }
+
+            function calculate4() {
+                var input = document.getElementById("inputData4").value;
+                var output = Math.round(input / 0.012);
+                document.getElementById("output4").innerText = "" + output + "個数";
+                saveData();
+            }
+
+            function calculate5() {
+                var input = document.getElementById("inputData5").value;
+                var output = Math.round(input / 0.013);
+                document.getElementById("output5").innerText = "" + output + "個数";
+                saveData();
+            }
+
+
+            document.getElementById('searchInput').addEventListener('input', function() {
+                var filter = this.value.toUpperCase();
+                var items = document.getElementsByClassName('inventory-item');
+                for (var i = 0; i < items.length; i++) {
+                    var label = items[i].getElementsByTagName('label')[0];
+                    if (label.innerText.toUpperCase().indexOf(filter) > -1) {
+                        items[i].style.display = "flex";
+                    } else {
+                        items[i].style.display = "none";
+                    }
+                }
+                saveData();
+            });
+
+            // ページ読み込み時にデータを復元
+            window.addEventListener('load', function() {
+                var inputData2 = localStorage.getItem('inputData2');
+                var inputData3 = localStorage.getItem('inputData3');
+                var inputData4 = localStorage.getItem('inputData4');
+                var searchInput = localStorage.getItem('searchInput');
+
+                if (inputData2 !== null) {
+                    document.getElementById("inputData2").value = inputData2;
+                    calculate2();
+                }
+                if (inputData3 !== null) {
+                    document.getElementById("inputData3").value = inputData3;
+                    calculate3();
+                }
+                if (inputData4 !== null) {
+                    document.getElementById("inputData4").value = inputData4;
+                    calculate4();
+                }
+                if (searchInput !== null) {
+                    document.getElementById("searchInput").value = searchInput;
+                    // トリガーイベントを発火してフィルタを適用
+                    var event = new Event('input');
+                    document.getElementById('searchInput').dispatchEvent(event);
+                }
+            });
+        </script>
