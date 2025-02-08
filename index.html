@@ -1,4 +1,19 @@
     <style>
+        .header-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .header-banner img {
+            max-width: 30%;
+            height: auto;
+        }
+        
         .inventory-section {
             display: flex;
             flex-direction: column;
@@ -149,6 +164,11 @@
         }
     </style>
     
+    <header class="header-banner">
+        <img src="images/chiikawa.jpg" alt="バナー">
+        <span>棚卸し！</span>
+    </header>
+    
     <div class="inventory-section">
     
         <input type="text" id="searchInput" placeholder="検索..." />
@@ -170,19 +190,59 @@
         </div>
     
         <div class="inventory-item">
-            <img src="images/tyrol.jpg" alt="チロル" />
-            <label for="inputData4">チロル(35個入り420g):</label>
+            <img src="images/tyrol.jpg" alt="チロルチョコアソート35個入(500円)230g@375:" />
+            <label for="inputData4">チロルチョコアソート35個入(500円)230g@375:</label>
             <input type="number" id="inputData4" placeholder="何キログラムですか？" />
             <button onclick="calculate4()">計算</button>
             <p id="output4"></p>
         </div>
     
         <div class="inventory-item">
-            <img src="images/tyro2.jpg" alt="チロルに入ってるチョコ" />
-            <label for="inputData5">チロルに入ってるチョコ:</label>
+            <img src="images/takaokachoco.jpg" alt="高岡カップポーションチョコセット(40円)@30:" />
+            <label for="inputData5">高岡カップポーションチョコセット(40円)@30:</label>
             <input type="number" id="inputData5" placeholder="何キログラムですか？" />
             <button onclick="calculate5()">計算</button>
             <p id="output5"></p>
+        </div>
+    
+        <div class="inventory-item">
+            <img src="images/sonomanmagam.jpg" alt="そのまんまガムセット(40円)@30" />
+            <label for="inputData6">そのまんまガムセット(40円)@30:</label>
+            <input type="number" id="inputData6" placeholder="何キログラムですか？" />
+            <button onclick="calculate6()">計算</button>
+            <p id="output6"></p>
+        </div>
+    
+        <div class="inventory-item">
+            <img src="images/umaibou.jpg" alt="うまい棒アソート(15円)@11" />
+            <label for="inputData7">うまい棒アソート(15円)@11:</label>
+            <input type="number" id="inputData7" placeholder="何キログラムですか？" />
+            <button onclick="calculate7()">計算</button>
+            <p id="output7"></p>
+        </div>
+    
+        <div class="inventory-item">
+            <img src="images/potetofry.jpg" alt="ポテトフライセット@30:" />
+            <label for="inputData8">ポテトフライセット@30:</label>
+            <input type="number" id="inputData8" placeholder="何キログラムですか？" />
+            <button onclick="calculate8()">計算</button>
+            <p id="output8"></p>
+        </div>
+    
+        <div class="inventory-item">
+            <img src="images/unchisofbcolor.jpg" alt="ウンチマンソフビドールアイスクリームカラー@225" />
+            <label for="inputData9">ウンチマンソフビドールアイスクリームカラー@225:</label>
+            <input type="number" id="inputData9" placeholder="何キログラムですか？" />
+            <button onclick="calculate9()">計算</button>
+            <p id="output9"></p>
+        </div>
+    
+        <div class="inventory-item">
+            <img src="images/unchisofbpower2.jpg" alt="ウンチマンソフビドールパワー2@230" />
+            <label for="inputData10">ウンチマンソフビドールパワー2@230:</label>
+            <input type="number" id="inputData10" placeholder="何キログラムですか？" />
+            <button onclick="calculate10()">計算</button>
+            <p id="output10"></p>
         </div>
     
     </div>
@@ -194,34 +254,74 @@
             localStorage.setItem('inputData3', document.getElementById("inputData3").value);
             localStorage.setItem('inputData4', document.getElementById("inputData4").value);
             localStorage.setItem('inputData5', document.getElementById("inputData5").value);
+            localStorage.setItem('inputData6', document.getElementById("inputData6").value);
+            localStorage.setItem('inputData7', document.getElementById("inputData7").value);
+            localStorage.setItem('inputData8', document.getElementById("inputData8").value);
+            localStorage.setItem('inputData9', document.getElementById("inputData9").value);
+            localStorage.setItem('inputData10', document.getElementById("inputData10").value);
             localStorage.setItem('searchInput', document.getElementById("searchInput").value);
         }
     
         function calculate2() {
             var input = document.getElementById("inputData2").value;
             var output = Math.round(input * 510);
-            document.getElementById("output2").innerText = "" + output + "個数";
+            document.getElementById("output2").innerText = output + "個数";
             saveData();
         }
         
         function calculate3() {
             var input = document.getElementById("inputData3").value;
-            var output = Math.round(input / 0.00672);
-            document.getElementById("output3").innerText = "" + output + "個数";
+            var output = Math.round(input / 0.00667);
+            document.getElementById("output3").innerText = output + "個数";
             saveData();
         }
     
         function calculate4() {
             var input = document.getElementById("inputData4").value;
-            var output = Math.round(input / 0.012);
-            document.getElementById("output4").innerText = "" + output + "個数";
+            var output = Math.round(input / 0.00657);
+            document.getElementById("output4").innerText = output + "個数";
             saveData();
         }
     
         function calculate5() {
             var input = document.getElementById("inputData5").value;
             var output = Math.round(input / 0.013);
-            document.getElementById("output5").innerText = "" + output + "個数";
+            document.getElementById("output5").innerText = output + "個数";
+            saveData();
+        }
+    
+        function calculate6() {
+            var input = document.getElementById("inputData6").value;
+            var output = Math.round(input / 0.015625);
+            document.getElementById("output6").innerText = output + "個数";
+            saveData();
+        }
+    
+        function calculate7() {
+            var input = document.getElementById("inputData7").value;
+            var output = Math.round(input / 0.0095);
+            document.getElementById("output7").innerText = output + "個数";
+            saveData();
+        }
+    
+        function calculate8() {
+            var input = document.getElementById("inputData8").value;
+            var output = Math.round(input / 0.01375);
+            document.getElementById("output8").innerText = output + "個数";
+            saveData();
+        }
+    
+        function calculate9() {
+            var input = document.getElementById("inputData9").value;
+            var output = Math.round(input / 0.074);
+            document.getElementById("output9").innerText = output + "個数";
+            saveData();
+        }
+    
+        function calculate10() {
+            var input = document.getElementById("inputData10").value;
+            var output = Math.round(input / 0.0695);
+            document.getElementById("output10").innerText = output + "個数";
             saveData();
         }
     
@@ -245,6 +345,11 @@
             var inputData3 = localStorage.getItem('inputData3');
             var inputData4 = localStorage.getItem('inputData4');
             var inputData5 = localStorage.getItem('inputData5');
+            var inputData6 = localStorage.getItem('inputData6');
+            var inputData7 = localStorage.getItem('inputData7');
+            var inputData8 = localStorage.getItem('inputData8');
+            var inputData9 = localStorage.getItem('inputData9');
+            var inputData10 = localStorage.getItem('inputData10');
             var searchInput = localStorage.getItem('searchInput');
     
             if (inputData2 !== null) {
@@ -262,6 +367,26 @@
             if (inputData5 !== null) {
                 document.getElementById("inputData5").value = inputData5;
                 calculate5();
+            }
+            if (inputData6 !== null) {
+                document.getElementById("inputData6").value = inputData6;
+                calculate6();
+            }
+            if (inputData7 !== null) {
+                document.getElementById("inputData7").value = inputData7;
+                calculate7();
+            }
+            if (inputData8 !== null) {
+                document.getElementById("inputData8").value = inputData8;
+                calculate8();
+            }
+            if (inputData9 !== null) {
+                document.getElementById("inputData9").value = inputData9;
+                calculate9();
+            }
+            if (inputData10 !== null) {
+                document.getElementById("inputData10").value = inputData10;
+                calculate10();
             }
             if (searchInput !== null) {
                 document.getElementById("searchInput").value = searchInput;
