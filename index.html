@@ -333,7 +333,7 @@
         </div>
 
         <div class="inventory-item">
-            <img src="images/item12.jpg" alt="新商品2" />
+            <img src="images/ecofakh.jpeg" alt="新商品2" />
             <label for="input11">エコファーしっぽKH@60</label>
             <div class="input-group">
                 <input type="number" id="input11" placeholder="kg数を入力" step="0.1" />
@@ -351,6 +351,17 @@
             </div>
             <p id="output12"></p>
         </div>
+
+        <div class="inventory-item">
+            <img src="images/mocomocoheaclip.jpg" alt="新商品4" />
+            <label for="input13">ふわもこヘアクリップ@35</label>
+            <div class="input-group">
+                <input type="number" id="input13" placeholder="kg数を入力" step="0.1" />
+                <button onclick="calculate13()">計算</button>
+            </div>
+            <p id="output13"></p>
+        </div>
+
     </div>
 </div>
 
@@ -425,6 +436,10 @@
 
     function calculate12() {
         calculateQuantity("input12", "output12", 0.0235);
+    }
+
+    function calculate13() {
+        calculateQuantity("input13", "output13", 0.0185);
     }
 
     // 検索機能の改善
